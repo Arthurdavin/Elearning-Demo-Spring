@@ -1,8 +1,8 @@
 package co.istad.elearningcodejourney.mapping.categorymapping;
 
-import co.istad.elearningcodejourney.dto.category.categoryrequest.CategoryRequest;
-import co.istad.elearningcodejourney.dto.category.categoryrequest.CreateCategoryRequest;
-import co.istad.elearningcodejourney.dto.category.categoryresponse.CategoryResponse;
+import co.istad.elearningcodejourney.dto.request.categoryrequest.CategoryRequest;
+import co.istad.elearningcodejourney.dto.request.categoryrequest.CreateCategoryRequest;
+import co.istad.elearningcodejourney.dto.response.categoryresponse.CategoryResponse;
 import co.istad.elearningcodejourney.feature.category.Category;
 import org.springframework.stereotype.Component;
 

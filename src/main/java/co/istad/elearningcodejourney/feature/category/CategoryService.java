@@ -1,8 +1,8 @@
 package co.istad.elearningcodejourney.feature.category;
 
-import co.istad.elearningcodejourney.dto.category.categoryrequest.CreateCategoryRequest;
-import co.istad.elearningcodejourney.dto.category.categoryrequest.UpdateCategoryRequest;
-import co.istad.elearningcodejourney.dto.category.categoryresponse.CategoryResponse;
+import co.istad.elearningcodejourney.dto.request.categoryrequest.CreateCategoryRequest;
+import co.istad.elearningcodejourney.dto.request.categoryrequest.UpdateCategoryRequest;
+import co.istad.elearningcodejourney.dto.response.categoryresponse.CategoryResponse;
 import org.springframework.data.domain.Page;
 
 public interface CategoryService {

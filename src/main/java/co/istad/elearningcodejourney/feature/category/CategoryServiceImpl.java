@@ -1,8 +1,8 @@
 package co.istad.elearningcodejourney.feature.category;
 
-import co.istad.elearningcodejourney.dto.category.categoryrequest.CreateCategoryRequest;
-import co.istad.elearningcodejourney.dto.category.categoryrequest.UpdateCategoryRequest;
-import co.istad.elearningcodejourney.dto.category.categoryresponse.CategoryResponse;
+import co.istad.elearningcodejourney.dto.request.categoryrequest.CreateCategoryRequest;
+import co.istad.elearningcodejourney.dto.request.categoryrequest.UpdateCategoryRequest;
+import co.istad.elearningcodejourney.dto.response.categoryresponse.CategoryResponse;
 import co.istad.elearningcodejourney.mapping.categorymapping.CategoryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -21,15 +21,16 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public Page<CategoryResponse> getAllCategory(Integer page, Integer size) {
         PageRequest pageRequest = PageRequest.of(page,size);
-        return categoryRepository.findAll(pageRequest)
+        return categoryRepository.findAllByIsDeleteFalse(pageRequest)
                 .map(categoryMapper::toResponse);
     }
 
     @Override
     public CategoryResponse getCategoryById(Integer id) {
-        Category category = categoryRepository.findById(id)
+        Category category = categoryRepository.findByIdAndIsDeleteFalse(id)
                 .orElseThrow(()->new ResponseStatusException(
-                        HttpStatus.NOT_FOUND,"Category with id %d not found".formatted(id)
+                        HttpStatus.NOT_FOUND,
+                        "Category with id %d not found".formatted(id)
                 ));
         return categoryMapper.toResponse(category);
     }

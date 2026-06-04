@@ -1,4 +1,4 @@
-package co.istad.elearningcodejourney.dto.category.categoryresponse;
+package co.istad.elearningcodejourney.dto.response.categoryresponse;
 
 public record CategoryResponse(
         Integer id,
