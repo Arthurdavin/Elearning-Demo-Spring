@@ -1,7 +1,12 @@
 spring:
+  security:
+    oauth2:
+      resource server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/myrealm
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -13,4 +18,5 @@ spring:
     password: vin1205
   application:
     name: elearning-code-journey
-
+server:
+  port: 8081
