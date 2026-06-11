@@ -1,5 +1,6 @@
 package co.istad.elearningcodejourney.feature.student;
 
+import co.istad.elearningcodejourney.config.auditing.BasedEntity;
 import co.istad.elearningcodejourney.feature.enrollment.Enrollment;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,7 +18,7 @@ import java.util.List;
 @Entity
 @Table(name = "student_profile")
 
-public class StudentProfile {
+public class StudentProfile extends BasedEntity {
     @Id
     private String userid;
 

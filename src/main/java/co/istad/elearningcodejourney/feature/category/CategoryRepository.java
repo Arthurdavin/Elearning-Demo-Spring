@@ -11,6 +11,6 @@ import java.util.Optional;
 
 public interface CategoryRepository extends JpaRepository<Category,Integer> {
     boolean existsByName(String name);
-    Page<Category> findAllByIsDeleteFalse(Pageable pageable);
-    Optional<Category> findByIdAndIsDeleteFalse(Integer id);
+//    Page<Category> findAllByIsDeleteFalse(Pageable pageable);
+//    Optional<Category> findByIdAndIsDeleteFalse(Integer id);
 }

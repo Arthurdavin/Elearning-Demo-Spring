@@ -17,6 +17,11 @@ import java.util.List;
 @Entity
 @Table(name = "instructor_profile")
 public class InstructorProfile {
+
+    public InstructorProfile(String userid){
+        this.userid=userid;
+    }
+
     @Id
     private String userid;
 

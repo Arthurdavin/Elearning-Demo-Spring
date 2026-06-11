@@ -1,4 +1,4 @@
-package co.istad.elearningcodejourney.dto.response;
+package co.istad.elearningcodejourney.advisor;
 
 import lombok.Builder;
 

@@ -1,8 +1,8 @@
 package co.istad.elearningcodejourney.feature.category;
 
-import co.istad.elearningcodejourney.dto.request.categoryrequest.CreateCategoryRequest;
-import co.istad.elearningcodejourney.dto.request.categoryrequest.UpdateCategoryRequest;
-import co.istad.elearningcodejourney.dto.response.categoryresponse.CategoryResponse;
+import co.istad.elearningcodejourney.feature.category.dto.CreateCategoryRequest;
+import co.istad.elearningcodejourney.feature.category.dto.request.UpdateCategoryRequest;
+import co.istad.elearningcodejourney.feature.category.dto.CategoryResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

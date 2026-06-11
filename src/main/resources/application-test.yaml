@@ -1,9 +1,4 @@
 spring:
-  security:
-    oauth2:
-      resource server:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/myrealm
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -16,6 +11,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/code_journey
     username: postgres
     password: vin1205
+  security:
+    oauth2:
+      resource server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/myrealm
+
   application:
     name: elearning-code-journey
 server:

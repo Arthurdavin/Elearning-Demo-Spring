@@ -1,6 +1,5 @@
 package co.istad.elearningcodejourney.advisor;
 
-import co.istad.elearningcodejourney.dto.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

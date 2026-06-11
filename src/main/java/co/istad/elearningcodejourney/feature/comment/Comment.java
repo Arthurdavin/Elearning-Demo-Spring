@@ -1,5 +1,6 @@
 package co.istad.elearningcodejourney.feature.comment;
 
+import co.istad.elearningcodejourney.config.auditing.BasedEntity;
 import co.istad.elearningcodejourney.feature.video.Video;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "comments")
 
-public class Comment {
+public class Comment extends BasedEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

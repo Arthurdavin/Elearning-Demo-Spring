@@ -1,4 +1,4 @@
-package co.istad.elearningcodejourney.dto.request.categoryrequest;
+package co.istad.elearningcodejourney.feature.category.dto.request;
 
 import jakarta.validation.constraints.Size;
 
