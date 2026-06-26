@@ -22,7 +22,7 @@ public class CourseController {
             @AuthenticationPrincipal Jwt jwt
             ){
         IO.print("Jwt: "+ jwt.getSubject());
-        return courseService.createCourse(createCourseRequest,jwt);
+        return courseService.createCourse(createCourseRequest);
     }
 
     @GetMapping

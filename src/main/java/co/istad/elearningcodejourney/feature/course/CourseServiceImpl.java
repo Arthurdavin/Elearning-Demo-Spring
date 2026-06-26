@@ -6,12 +6,15 @@ import co.istad.elearningcodejourney.feature.course.dto.CourseResponse;
 import co.istad.elearningcodejourney.feature.course.dto.CreateCourseRequest;
 import co.istad.elearningcodejourney.feature.course.dto.UpdateCourseRequest;
 import co.istad.elearningcodejourney.feature.instructor.InstructorProfile;
+import co.istad.elearningcodejourney.security.AuthUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -27,7 +30,7 @@ public class CourseServiceImpl implements CourseService{
     private final CourseMapper courseMapper;
 
     @Override
-    public CourseResponse createCourse(CreateCourseRequest createCourseRequest, Jwt jwt) {
+    public CourseResponse createCourse(CreateCourseRequest createCourseRequest) {
 
         // validate slug
         if (courseRepository.existsBySlug(createCourseRequest.slug())) {
@@ -54,7 +57,13 @@ public class CourseServiceImpl implements CourseService{
         course.setIsPublished(false);
 //        course.setCreatedAt(LocalDateTime.now());
 //        course.setUpdatedAt(LocalDateTime.now());
-        course.setInstructorProfile(new InstructorProfile(jwt.getSubject()));
+        // why don't use JWT use JWtAuthenticationToken because it inherit from AbstractionAuthenthen that it convert Jwt to JWtAuthticationToken
+        JwtAuthenticationToken jwtAuthenticationToken = (JwtAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+//        IO.println(jwtAuthenticationToken);
+        IO.println("Test: "+jwtAuthenticationToken);
+//        IO.println(jwtAuthenticationToken.getToken().getSubject());
+
+        course.setInstructorProfile(new InstructorProfile(AuthUtils.extractUserId()));
 
         course = courseRepository.save(course);
 

@@ -17,16 +17,12 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 public abstract class BasedEntity {
-
     @CreatedDate
     protected LocalDateTime createdAt;
-
     @LastModifiedDate
     protected LocalDateTime lastModifiedAt;
-
     @CreatedBy
     protected String createdBy;
-
     @LastModifiedBy
     protected String lastModifiedBy;
 }
